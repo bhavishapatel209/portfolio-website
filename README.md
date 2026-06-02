@@ -43,38 +43,6 @@ portfolio/
 
 ---
 
-## 🚀 How This Was Built & Deployed
-
-### 1. Built with Wibey (AI Coding Assistant)
-This portfolio was created using **[Wibey](https://wibey.walmart.com/code)**, an AI-powered coding assistant integrated into VS Code. It generated the full HTML structure, CSS styling, and JavaScript interactivity in one go.
-
-### 2. Repository Setup
-A GitHub repository was created and the code was pushed using the GitHub CLI (`gh`):
-```bash
-git init
-git add .
-git commit -m "Initial commit: Personal portfolio website"
-gh repo create portfolio-website --public --source=. --remote=origin --push
-```
-
-### 3. Deployed via GitHub Pages
-GitHub Pages was enabled directly via the GitHub API:
-```bash
-gh api repos/bhavishapatel209/portfolio-website/pages \
-  --method POST \
-  --input - <<'EOF'
-{"source":{"branch":"main","path":"/"}}
-EOF
-```
-
-This makes the site automatically available at:
-> `https://bhavishapatel209.github.io/portfolio-website/`
-
-### 4. Auto-Deploy on Updates
-Every time changes are pushed to the `main` branch, GitHub Pages automatically rebuilds and redeploys the site within ~1 minute.
-
----
-
 ## ✏️ How to Customize
 
 1. **Your Info** — Open `index.html` and replace `"Your Name"`, bio, company names, and project details
