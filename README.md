@@ -43,6 +43,36 @@ portfolio/
 
 ---
 
+## 🚀 Deployment
+
+This site is hosted on **GitHub Pages** — deployed directly from the `main` branch.
+
+### 1. Repository Setup
+```bash
+git init
+git add .
+git commit -m "Initial commit: Personal portfolio website"
+gh repo create portfolio-website --public --source=. --remote=origin --push
+```
+
+### 2. Enable GitHub Pages
+GitHub Pages was enabled via the GitHub API:
+```bash
+gh api repos/bhavishapatel209/portfolio-website/pages \
+  --method POST \
+  --input - <<'EOF'
+{"source":{"branch":"main","path":"/"}}
+EOF
+```
+
+The site is live at:
+> 🔗 `https://bhavishapatel209.github.io/portfolio-website/`
+
+### 3. Auto-Deploy on Updates
+Every push to `main` automatically redeploys the site within ~1 minute.
+
+---
+
 ## ✏️ How to Customize
 
 1. **Your Info** — Open `index.html` and replace `"Your Name"`, bio, company names, and project details
